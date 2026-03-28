@@ -95,14 +95,14 @@ def upload_image():
             upload_image()
             window.mainloop()
         else:
-            main()
+            return main()
 
     if not file_path:     
         functionality_option = input("Image upload cancelled\n Do you want to try again? ('y' to proceed; any key to main menu): ").lower()
         if functionality_option.lower() == 'y':
             upload_image()
         else:
-            main()
+            return main()
 
 # Initiate a face recognition scan to the user to logged the attendance to the csv file
 def activate_face_recognition():
@@ -452,6 +452,6 @@ def main():
             quit()
         else:
             print("please respond using only the specified")
-        
-main()
 
+if __name__ == '__main__':        
+    main()
